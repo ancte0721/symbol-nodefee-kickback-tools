@@ -1,0 +1,55 @@
+[Kickbacktools]
+# 実際には送金しない確認モード、Falseで実際に送金するモード
+# Confirmation mode that does not actually send XYM, mode that actually sends XYM with "False"
+dryrun = True
+
+# ハーベスト手数料の受け取りウォレットの秘密鍵
+# Private key of the receipt wallet of the harvest fee
+private_key = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# 1送金あたりの最大XYM数量（これ以上の送金を検知した場合、処理を停止します）
+# Limit of sending XYM amount
+limit_xym_amount = 100
+
+# このブロック数以降のハーベストが対象
+# Only blocks with height greater or equal than this one are targeted
+from_block_height = 450000
+
+# このブロック数までのハーベストが対象 (0で最新のブロック高までが対象)
+# Only blocks with height less or equal than this one are targeted (0 means up to the latest block height)
+to_block_height = 0
+
+# 固定のキックバックXYM数量 (0より大きい値の場合、次項のキックバックレートは無視されます)
+# Fixed kickback XYM amount (if the value is greater than 0, the kickback rate in the next section will be ignored)
+fixed_kickback = 0
+
+# キックバックレート（75%還元の場合、0.75）
+# Kickback rate (0.75 for 75% reduction)
+kickback_rate = 0.75
+
+# 最大手数料XYM数量
+# Max transaction fee
+max_txfee = 0.5
+
+# 還元トランザクションに添えるメッセージ (#BLOCK# というワードがハーベストブロック高に置換されます)
+# Message to accompany the kickback transaction (The word #BLOCK# is replaced with the harvest block height)
+message = node fee kickback [block:#BLOCK#]
+
+# Your Node url adress
+node = http://xxx.yyy.zzz:3000
+
+# ハーベストのシステム定数（メインネットの場合は 0x2143 から変更不要）
+# ReceiptTypeEnum of Harvest_Fee (mainnet is 0x2143)
+receipt_type_enum = 0x2143
+
+# Symbol誕生のUTC秒 (メインネットは1615853185)
+# UTC of Symbol's launch in seconds (mainnet is 1615853185))
+birth_time = 1615853185
+
+# トランザクションの有効期限(単位はhour。この例だと2時間)
+# Transaction expiration date in hours (e.g. 2 hours)
+exp_time = 2
+
+# XYMのモザイクID (メインネットは0x6BED913FA20223F8)
+# Mosaic ID (mainnet XYM = 0x6BED913FA20223F8)
+mosaic_id = 0x6BED913FA20223F8
