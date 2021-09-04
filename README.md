@@ -1,5 +1,6 @@
 # symbol-nodefee-kickback-tools
 ハーベスト手数料をハーベスターに還元するノード運営者向けツール
+
 [In english](./README_EN.md)
 
 # Features
@@ -13,15 +14,16 @@ Python 3.7 later
  * symbol-sdk-core-python 1.0.0
 
 # Installation
----bash
+```
 cp config.ini.example config.ini
----
+```
+
 config.iniの内容を自分の環境や行いたい還元ルールに沿って編集してください
 
 # Usage
----bash
+```
 python nodefee-kickback.py
----
+```
 
 # Note
 - 初回は必ずドライランモード（dryrun = True）にて動作や送金額を確認してから実施してください
