@@ -61,9 +61,12 @@ def main():
     logger.info("### target address, XYM amount, message ###")
     # トランザクションリスト作成
     tx_lst = []
+    highest_block = 0
     for item in kickback_list:
         xym_amount = int(setting.fixed_kickback * 1000000) if setting.fixed_kickback > 0 else int(int(item[2]) * setting.kickback_rate)
         message = setting.message.replace("#BLOCK#", str(item[0]))
+        if highest_block < int(item[0]):
+            highest_block = int(item[0])
         logger.info(str([item[1], xym_amount/1000000, message]))
         # limit確認
         if setting.limit_xym_amount <= xym_amount/1000000:
@@ -87,6 +90,11 @@ def main():
         logger.info("Transaction hash: "+ str(tx_hash))
         cw.publish_tx(aggregate_tx)
         logger.info("Published : http://explorer.symbolblockchain.io/transactions/"+ str(tx_hash))
+        if setting.autoupdate:
+            setting.config['Kickbacktools']['from_block_height'] = str(highest_block +1)
+            with open("./config.ini", 'w', encoding='utf-8') as configfile:
+                setting.config.write(configfile)
+            logger.info("from_block_height update to " + str(highest_block +1))
         logger.info("Node fee kickback is completed")
 
 

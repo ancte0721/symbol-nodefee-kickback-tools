@@ -19,6 +19,10 @@ from_block_height = 450000
 # Only blocks with height less or equal than this one are targeted (0 means up to the latest block height)
 to_block_height = 0
 
+# [from_block_height]の自動更新（前回実行時の最終ハーベストブロック高に更新）
+# [from_block_height] Automatic update (updated to the last harvest block height at the previous execution)
+autoupdate_from_block_height = False
+
 # 固定のキックバックXYM数量 (0より大きい値の場合、次項のキックバックレートは無視されます)
 # Fixed kickback XYM amount (if the value is greater than 0, the kickback rate in the next section will be ignored)
 fixed_kickback = 0
