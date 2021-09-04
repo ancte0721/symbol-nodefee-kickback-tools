@@ -24,6 +24,7 @@ config.iniの内容を自分の環境や行いたい還元ルールに沿って�
 ```
 python nodefee-kickback.py
 ```
+実行毎にlogsディレクトリにログファイルが出力されます
 
 # Note
 - 初回は必ずドライランモード（dryrun = True）にて動作や送金額を確認してから実施してください
