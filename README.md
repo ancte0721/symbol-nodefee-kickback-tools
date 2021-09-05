@@ -1,5 +1,5 @@
 # symbol-nodefee-kickback-tools
-ハーベスト手数料をハーベスターに還元するノード運営者向けツール
+ハーベスト報酬をハーベスターに還元するノード運営者向けツール
 
 Qiitaに詳細な解説記事を用意しています
 [[Symbol] ノード運営者向けハーベスト還元ツールを開発しました](https://qiita.com/nobu_kyutech/items/b77164b77691a76c3b31)
